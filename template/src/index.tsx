@@ -1,8 +1,15 @@
-import React from "react";
 import ReactDOM from "react-dom";
 
+import App from './components/App';
+
+import worker from './mocks';
+
+// if (isDevelopment()) {
+    worker.start();
+// }
+
 const wrappedApp = (
-    <p>1234</p>
+    <App />
 );
 
 ReactDOM.render(wrappedApp, document.getElementById("root"));

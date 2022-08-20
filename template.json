@@ -1,6 +1,7 @@
 {
     "package": {
       "devDependencies": {
+        "@types/uuid": "8.3.4",
         "@types/node": "16.11.51",
         "@types/react": "17.0.48",
         "@types/react-dom": "17.0.17",
@@ -18,12 +19,19 @@
         "path-to-regexp": "6.2.0",
         "react": "17.0.1",
         "react-dom": "17.0.1",
-        "react-declarative": "1.9.125",
+        "react-declarative": "1.9.126",
         "react-window": "1.8.6",
-        "uuid": "8.3.2"
+        "uuid": "8.3.2",
+        "msw": "0.44.2"
       },
       "eslintConfig": {
-        "extends": ["react-app", "react-app/jest"]
+        "extends": [
+          "react-app",
+          "react-app/jest"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
       }
     }
 }
