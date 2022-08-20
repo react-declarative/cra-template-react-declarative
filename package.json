@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "webpack-cli serve",
-    "test": "rimraf test && npx create-react-app test --template=./"
+    "test": "rimraf test && npx create-react-app test --template=file:./"
   },
   "devDependencies": {
     "esbuild-loader": "2.19.0",
