@@ -14,7 +14,7 @@ module.exports = {
         options: {
           loader: "tsx",
           target: "es2015",
-          tsconfigRaw: require('./tsconfig.json')
+          tsconfigRaw: require(path.join(__dirname, "./template/tsconfig.json"))
         },
       },
     ],
@@ -35,7 +35,7 @@ module.exports = {
     }),
     new ForkTsCheckerWebpackPlugin({
       typescript: {
-        configFile: './tsconfig.json',
+        configFile: path.join(__dirname, "./template/tsconfig.json"),
       },
     }),
   ],

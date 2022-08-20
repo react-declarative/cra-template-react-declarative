@@ -1,6 +1,6 @@
 {
   "name": "react-declarative-template",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "keywords": [],
   "author": "",
@@ -40,7 +40,7 @@
     "history": "5.3.0",
     "path-to-regexp": "6.2.0",
     "react": "17.0.1",
-    "react-declarative": "1.9.124",
+    "react-declarative": "1.9.125",
     "react-dom": "17.0.1",
     "react-scripts": "5.0.1",
     "react-window": "1.8.6",
