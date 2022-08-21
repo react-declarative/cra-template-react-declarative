@@ -1,17 +1,35 @@
 {
-  "name": "react-declarative-template",
-  "version": "0.0.1",
-  "description": "",
-  "keywords": [],
+  "name": "cra-template-react-declarative",
+  "version": "1.9.136",
+  "description": "The most advanced CRM Boilerplate for React + TypeScript + Mobx. Contains snippets for automatic state management in a declarative style",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "typescript",
+    "mui",
+    "material-ui",
+    "mobx",
+    "msw",
+    "mock",
+    "mocking",
+    "state-management",
+    "form-validation",
+    "layout-engine",
+    "grid-system",
+    "declarative-programming",
+    "json-endpoint",
+    "crm",
+    "ux"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/react-declarative/react-declarative-template/issues"
+    "url": "https://github.com/react-declarative/cra-template-react-declarative/issues"
   },
-  "homepage": "https://github.com/react-declarative/react-declarative-template#readme",
+  "homepage": "https://github.com/react-declarative/cra-template-react-declarative#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/react-declarative/react-declarative-template.git"
+    "url": "git+https://github.com/react-declarative/cra-template-react-declarative.git"
   },
   "scripts": {
     "start": "webpack-cli serve",
