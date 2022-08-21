@@ -1,15 +1,29 @@
 import ReactDOM from "react-dom";
 
-import App from './components/App';
+import { ThemeProvider } from "@mui/styles";
+import { ModalProvider } from "react-declarative";
+import { SnackbarProvider } from "notistack";
 
-import worker from './mocks';
+import "./polyfills";
+
+import App from "./components/App";
+
+import worker from "./mocks";
+
+import THEME_DARK from "./theme";
 
 // if (isDevelopment()) {
-    worker.start();
+worker.start();
 // }
 
 const wrappedApp = (
-    <App />
+  <ThemeProvider theme={THEME_DARK}>
+    <ModalProvider>
+      <SnackbarProvider>
+        <App />
+      </SnackbarProvider>
+    </ModalProvider>
+  </ThemeProvider>
 );
-
+ 
 ReactDOM.render(wrappedApp, document.getElementById("root"));

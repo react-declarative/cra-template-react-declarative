@@ -26,8 +26,14 @@ module.exports = {
     static: {
       directory: path.join(__dirname, "./template/public"),
     },
+    historyApiFallback: {
+      index: '/'
+    },
     compress: false,
     port: 3000,
+  },
+  output: {
+    publicPath: '/'
   },
   plugins: [
     new HtmlWebpackPlugin({
