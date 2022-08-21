@@ -2,7 +2,8 @@ import { createWindowHistory, FetchError } from "react-declarative";
 
 export const history = createWindowHistory();
 
-const handleGlobalError = (error: any) => {
+export const handleGlobalError = (error: any) => {
+    console.warn('Error caught', { error })
     if (error instanceof FetchError) {
         if (error.response?.status === 401) {
             history.push('/unauthorized-page');
@@ -12,7 +13,7 @@ const handleGlobalError = (error: any) => {
     }
 };
 
-window.addEventListener('error', handleGlobalError);
-window.addEventListener('unhandledrejection', handleGlobalError);
+// window.addEventListener('error', handleGlobalError);
+// window.addEventListener('unhandledrejection', handleGlobalError);
 
 export default history;
