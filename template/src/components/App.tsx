@@ -46,6 +46,7 @@ const App = observer(() => {
     // TODO: <Scaffold payload={currentUser.id}
     //                 ^^^^^^^^^^^^^^^^^^^^^^^^
     <Scaffold
+      dense
       loaderLine={loader}
       options={sidemenu}
       actions={scaffoldmenu}
