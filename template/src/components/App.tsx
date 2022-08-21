@@ -5,11 +5,13 @@ import { Switch, Scaffold } from "react-declarative";
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
 
+import UserInfo from "./common/UserInfo";
+
 import history from "../helpers/history";
 
-import routes from "../routes";
-import sidemenu from "../sidemenu";
-import scaffoldmenu from "../scaffoldmenu";
+import routes from "../config/routes";
+import sidemenu from "../config/sidemenu";
+import scaffoldmenu from "../config/scaffoldmenu";
 
 const Loader = () => (
   <Box
@@ -42,6 +44,7 @@ const App = () => {
       options={sidemenu}
       actions={scaffoldmenu}
       Loader={Loader}
+      BeforeSearch={UserInfo}
       onOptionClick={(name) => history.push(name)}
     >
       <Switch

@@ -10,7 +10,7 @@ import App from "./components/App";
 
 import worker from "./mocks";
 
-import THEME_DARK from "./theme";
+import THEME_DARK from "./config/theme";
 
 // if (isDevelopment()) {
 worker.start();

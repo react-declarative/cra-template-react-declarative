@@ -1,6 +1,6 @@
 import { ISwitchItem } from 'react-declarative';
 
-import DashboardPage from './pages/DashboardPage';
+import DashboardPage from '../pages/DashboardPage';
 
 export const routes: ISwitchItem[] = [
   {
