@@ -4,6 +4,7 @@ import Delete from '@mui/icons-material/Delete';
 import Add from '@mui/icons-material/Add';
 
 import fetchApi from '../../helpers/fetchApi';
+import history from '../../helpers/history';
 
 import useLoader from '../../hooks/useLoader';
 
@@ -12,6 +13,11 @@ const filters: TypedField[] = [
         type: FieldType.Text,
         name: 'title',
         title: 'Title',
+    },
+    {
+        type: FieldType.Checkbox,
+        name: 'completed',
+        title: 'Completed',
     },
 ];
 
@@ -28,7 +34,14 @@ const columns: IColumn[] = [
         headerName: 'Title',
         primary: true,
         field: 'title',
-        width: (fullWidth) => Math.max(fullWidth - 250, 200),
+        width: (fullWidth) => Math.max(fullWidth - 350, 200),
+    },
+    {
+        type: ColumnType.CheckBox,
+        headerName: 'Completed',
+        primary: true,
+        field: 'completed',
+        width: () => 100,
     },
     {
         type: ColumnType.Action,
@@ -88,7 +101,7 @@ export const TodoListPage = () => {
     };
 
     const handleClick = (row: any) => {
-        alert(JSON.stringify({ row }, null, 2));
+        history.push(`/todos/${row.id}`);
     };
 
     return (

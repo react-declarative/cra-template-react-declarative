@@ -13,7 +13,9 @@ export const [LoaderProvider, useLoader] = createProvider(() => new class {
         return !!this._loader;
     };
 
-    setLoader = (loader: boolean) => this._loader = Math.max(this._loader + (loader ? 1 : -1), 0);
+    setLoader = (loader: boolean) => {
+        this._loader = Math.max(this._loader + (loader ? 1 : -1), 0)
+    };
 
 });
 
