@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { ThemeProvider } from "@mui/styles";
 import { ModalProvider } from "react-declarative";
 import { SnackbarProvider } from "notistack";
+import { LoaderProvider } from "./hooks/useLoader";
 
 import "./polyfills";
 
@@ -20,7 +21,9 @@ const wrappedApp = (
   <ThemeProvider theme={THEME_DARK}>
     <ModalProvider>
       <SnackbarProvider>
-        <App />
+        <LoaderProvider>
+          <App />
+        </LoaderProvider>
       </SnackbarProvider>
     </ModalProvider>
   </ThemeProvider>

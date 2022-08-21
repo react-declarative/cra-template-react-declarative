@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { observer } from "mobx-react";
 
 import { Switch, Scaffold } from "react-declarative";
 
@@ -8,6 +8,8 @@ import CircularProgress from '@mui/material/CircularProgress';
 import UserInfo from "./common/UserInfo";
 
 import history from "../helpers/history";
+
+import useLoader from "../hooks/useLoader";
 
 import routes from "../config/routes";
 import sidemenu from "../config/sidemenu";
@@ -34,13 +36,17 @@ const Loader = () => (
   </Box>
 );
 
-const App = () => {
-  const [loading, setLoading] = useState(0);
-  const handleLoadStart = () => setLoading((loading) => loading + 1);
-  const handleLoadEnd = () => setLoading((loading) => loading - 1);
+const Fragment = () => <></>;
+
+const App = observer(() => {
+  const { loader, setLoader } = useLoader();
+  const handleLoadStart = () => setLoader(true);
+  const handleLoadEnd = () => setLoader(false);
   return (
+    // TODO: <Scaffold payload={currentUser.id}
+    //                 ^^^^^^^^^^^^^^^^^^^^^^^^
     <Scaffold
-      loaderLine={!!loading}
+      loaderLine={loader}
       options={sidemenu}
       actions={scaffoldmenu}
       Loader={Loader}
@@ -48,7 +54,7 @@ const App = () => {
       onOptionClick={(name) => history.push(name)}
     >
       <Switch
-        Loader={Loader}
+        Loader={Fragment}
         history={history}
         items={routes}
         onLoadStart={handleLoadStart}
@@ -56,6 +62,6 @@ const App = () => {
       />
     </Scaffold>
   );
-};
+});
 
 export default App;
