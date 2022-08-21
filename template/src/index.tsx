@@ -28,5 +28,5 @@ const wrappedApp = (
     </ModalProvider>
   </ThemeProvider>
 );
- 
+
 ReactDOM.render(wrappedApp, document.getElementById("root"));
