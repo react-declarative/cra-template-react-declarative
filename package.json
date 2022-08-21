@@ -65,7 +65,6 @@
   },
   "files": [
     "template",
-    "template.json",
-    "README.md"
+    "template.json"
   ]
 }

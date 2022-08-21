@@ -1,6 +1,8 @@
 # cra-template-react-declarative
 
-> Contains the most advanced todo-list which you ever seen!
+> Contains the most advanced `todo-list` which you ever seen!
+
+![screenshot](./docs/screenshot.gif)
 
 ## Usage
 
@@ -10,7 +12,11 @@ npx create-react-app . --template=react-declarative
 
 ## What's inside
 
-[React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [MUI](https://mui.com/), [Mobx](https://mobx.js.org/), [MSW](https://mswjs.io/), [react-declarative](https://www.npmjs.com/package/react-declarative)
+1. [TypeScript](https://www.typescriptlang.org/)
+2. [MUI](https://mui.com/)
+3. [Mobx](https://mobx.js.org/)
+4. [MSW](https://mswjs.io/)
+5. [react-declarative](https://www.npmjs.com/package/react-declarative)
 
 ## Code sample
 
