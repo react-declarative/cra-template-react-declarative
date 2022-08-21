@@ -92,7 +92,7 @@ export const TodoListPage = () => {
         onLoadEnd: () => setLoader(false),
     });
 
-    const handleRowActionsClick = (row: any, action: string) => {
+    const handleRowActionsClick = (action: string, row: any) => {
         alert(JSON.stringify({ row, action }, null, 2));
     };
 

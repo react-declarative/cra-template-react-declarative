@@ -53,8 +53,19 @@
     "resize-observer-polyfill": "1.5.1",
     "uuid": "8.3.2"
   },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "import/no-anonymous-default-export": "off",
+      "new-parens": "off"
+    }
+  },
   "files": [
     "template",
-    "template.json"
+    "template.json",
+    "README.md"
   ]
 }

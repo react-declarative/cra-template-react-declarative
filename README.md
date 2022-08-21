@@ -1,3 +1,20 @@
+# cra-template-react-declarative
+
+> Contains the most advanced todo-list which you ever seen!
+
+## Usage
+
+```bash
+npx create-react-app . --template=react-declarative
+```
+
+## What's inside
+
+[React](https://reactjs.org/), [TypeScript](https://www.typescriptlang.org/), [MUI](https://mui.com/), [Mobx](https://mobx.js.org/), [MSW](https://mswjs.io/), [react-declarative](https://www.npmjs.com/package/react-declarative)
+
+## Code sample
+
+```tsx
 import { FetchView, Breadcrumbs, One, FieldType, IField, usePreventLeave } from 'react-declarative';
 
 import fetchApi from '../../helpers/fetchApi';
@@ -69,11 +86,11 @@ export const TodoOnePage = ({
             <>
                 <Breadcrumbs
                     withSave
+                    saveDisabled={!data}
                     title="Todo list"
                     subtitle={props.todo.title}
                     onSave={beginSave}
                     onBack={() => history.push('/todos')}
-                    disabled={!data}
                 />
                 <One
                     handler={() => props.todo}
@@ -94,3 +111,4 @@ export const TodoOnePage = ({
 };
 
 export default TodoOnePage;
+```
