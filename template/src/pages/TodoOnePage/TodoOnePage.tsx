@@ -1,4 +1,4 @@
-import { FetchView, Breadcrumbs, One, FieldType, IField, usePreventLeave } from 'react-declarative';
+import { FetchView, Breadcrumbs, One, FieldType, TypedField, usePreventLeave } from 'react-declarative';
 
 import fetchApi from '../../helpers/fetchApi';
 import history from '../../helpers/history';
@@ -7,7 +7,7 @@ interface ITodoOnePageProps {
     id: string;
 }
 
-const fields: IField[] = [
+const fields: TypedField[] = [
     {
         type: FieldType.Line,
         title: 'System info'
@@ -73,7 +73,7 @@ export const TodoOnePage = ({
                     subtitle={props.todo.title}
                     onSave={beginSave}
                     onBack={() => history.push('/todos')}
-                    disabled={!data}
+                    saveDisabled={!data}
                 />
                 <One
                     handler={() => props.todo}
