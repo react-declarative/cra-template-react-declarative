@@ -1,6 +1,6 @@
 {
   "name": "cra-template-react-declarative",
-  "version": "1.9.140",
+  "version": "1.9.142",
   "description": "The most advanced CRM Boilerplate for React + TypeScript + Mobx. Contains snippets for automatic state management in a declarative style",
   "keywords": [
     "react",
@@ -64,7 +64,7 @@
     "notistack": "2.0.5",
     "path-to-regexp": "6.2.0",
     "react": "17.0.1",
-    "react-declarative": "1.9.140",
+    "react-declarative": "1.9.141",
     "react-dom": "17.0.1",
     "react-scripts": "5.0.1",
     "react-window": "1.8.6",
