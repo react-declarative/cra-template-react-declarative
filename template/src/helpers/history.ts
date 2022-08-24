@@ -9,8 +9,8 @@ export const handleGlobalError = (error: any) => {
             history.push('/unauthorized-page');
             return;
         }
-        history.push('/error-page');
     }
+    history.push('/error-page');
 };
 
 // window.addEventListener('error', handleGlobalError);
