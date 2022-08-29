@@ -1,4 +1,6 @@
-import { createWindowHistory, FetchError } from "react-declarative";
+import { createWindowHistory, createRouteManager, FetchError } from "react-declarative";
+
+import routes from '../config/routes';
 
 export const history = createWindowHistory();
 
@@ -12,6 +14,8 @@ export const handleGlobalError = (error: any) => {
     }
     history.push('/error-page');
 };
+
+export const getRouteParams = createRouteManager(routes, history);
 
 // window.addEventListener('error', handleGlobalError);
 // window.addEventListener('unhandledrejection', handleGlobalError);
