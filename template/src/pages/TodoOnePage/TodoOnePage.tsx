@@ -46,11 +46,20 @@ const fields: TypedField[] = [
     }
 ];
 
+interface ITodoItem {
+    completed: boolean
+    id: number
+    title: string
+    userId: number
+}
+
 export const TodoOnePage = ({
     id,
 }: ITodoOnePageProps) => {
 
-    const fetchState = async () => await fetchApi(`/api/v1/todos/${id}`);
+    const fetchState = () => [
+        fetchApi<ITodoItem>(`/api/v1/todos/${id}`),
+    ] as const;
 
     const Content = (props: any) => {
 
@@ -75,7 +84,7 @@ export const TodoOnePage = ({
                     onBack={() => history.push('/todos')}
                     saveDisabled={!data}
                 />
-                <One
+                <One<ITodoItem>
                     handler={() => props.todo}
                     fields={fields}
                     {...oneProps}

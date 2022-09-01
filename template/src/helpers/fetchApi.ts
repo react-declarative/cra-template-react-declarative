@@ -22,10 +22,10 @@ export const logout = () => {
     authSessionManager.setValue("");
 };
 
-export const fetchApi = async (input: RequestInfo | URL, init?: RequestInit) => {
+export const fetchApi = async <T = any>(input: RequestInfo | URL, init?: RequestInit) => {
     const sessionId = authStorageManager.getValue() || authSessionManager.getValue();
     try {
-        return await fetchApiInternal(input, {
+        return await fetchApiInternal<T>(input, {
             ...init,
             headers: {
                 ...init?.headers,
@@ -37,6 +37,7 @@ export const fetchApi = async (input: RequestInfo | URL, init?: RequestInit) => 
         })
     } catch (error: any) {
         handleGlobalError(error);
+        throw error;
     }
 };
 
