@@ -8,6 +8,7 @@ export const sidemenu: IMenuGroup[] = [
     {
         label: "Example Pages",
         icon: PublicIcon,
+        lifted: true,
         options: [
             {
                 label: "Dashboard",
