@@ -1,6 +1,6 @@
-import { useCallback, useMemo } from 'react';
+import { useMemo } from 'react';
 
-import { createProvider, useModel, useActualValue } from 'react-declarative';
+import { createProvider, useModel } from 'react-declarative';
 
 interface IState {
     loader: number;
@@ -22,19 +22,15 @@ export const LoaderProvider = ({
         initialValue: () => ({
             loader: 0,
         }),
-        debounce: 25,
+        debounce: 0,
     });
-    const model$ = useActualValue(model);
-    const setLoader = useCallback((loader: boolean) => {
-        const { current: model } = model$;
-        model.setData({
-            loader: Math.max(model.data.loader + (loader ? 1 : -1), 0),
-        });
-    }, [model$]);
-    const payload = useMemo((): IContext => ({
-        setLoader,
+    const payload = {
         loader: !!model.data.loader,
-    }), [model.data.loader, setLoader]);
+        setLoader: (loader: boolean) => model.setData((data) => ({
+            loader: data.loader + (loader ? 1 : -1),
+        })),
+    };
+    console.log({ payload })
     return (
         <LoaderProviderCtx payload={payload}>
             {children}
