@@ -1,5 +1,3 @@
-import { useMemo } from 'react';
-
 import { createProvider, useModel } from 'react-declarative';
 
 interface IState {
@@ -30,7 +28,6 @@ export const LoaderProvider = ({
             loader: data.loader + (loader ? 1 : -1),
         })),
     };
-    console.log({ payload })
     return (
         <LoaderProviderCtx payload={payload}>
             {children}
