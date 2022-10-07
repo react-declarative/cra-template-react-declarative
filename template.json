@@ -22,7 +22,7 @@
         "path-to-regexp": "6.2.0",
         "react": "17.0.1",
         "react-dom": "17.0.1",
-        "react-declarative": "2.0.61",
+        "react-declarative": "2.0.65",
         "resize-observer-polyfill": "1.5.1",
         "react-window": "1.8.6",
         "mobx": "6.6.1",
