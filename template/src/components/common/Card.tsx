@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 import { alpha } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
+import { makeStyles } from '../../styles';
 
 import clsx from 'clsx';
 
 import Paper from '@mui/material/Paper';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles()({
     root: {
         position: 'relative',
         height: '100%',
@@ -39,7 +39,7 @@ export const Card = ({
     className,
     style,
 }: ICardProps) => {
-    const classes = useStyles();
+    const { classes } = useStyles();
     return (
         <Paper className={clsx(classes.root, className)} style={style}>
             <div className={classes.container}>

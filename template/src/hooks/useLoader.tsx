@@ -20,7 +20,7 @@ export const LoaderProvider = ({
         initialValue: () => ({
             loader: 0,
         }),
-        debounce: 0,
+        debounce: 500,
     });
     const payload = {
         loader: !!model.data.loader,

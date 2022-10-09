@@ -1,6 +1,7 @@
-import ReactDOM from "react-dom";
+import { createRoot } from 'react-dom/client';
 
-import { ThemeProvider } from "@mui/styles";
+import { ThemeProvider } from '@mui/material/styles';
+
 import { ModalProvider } from "react-declarative";
 import { ErrorBoundary } from "react-declarative";
 import { SnackbarProvider } from "notistack";
@@ -20,6 +21,8 @@ import history, { handleGlobalError } from './helpers/history';
 worker.start();
 // }
 
+const container = document.getElementById('root')!;
+
 const wrappedApp = (
   <ErrorBoundary history={history} onError={handleGlobalError}>
     <ThemeProvider theme={THEME_DARK}>
@@ -34,4 +37,6 @@ const wrappedApp = (
   </ErrorBoundary>
 );
 
-ReactDOM.render(wrappedApp, document.getElementById("root"));
+const root = createRoot(container);
+
+root.render(wrappedApp);
