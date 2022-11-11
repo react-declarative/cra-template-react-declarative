@@ -16,7 +16,8 @@ npx create-react-app . --template=react-declarative
 2. [MUI](https://mui.com/)
 3. [Mobx](https://mobx.js.org/)
 4. [MSW](https://mswjs.io/)
-5. [react-declarative](https://www.npmjs.com/package/react-declarative)
+5. [tss-react](https://www.tss-react.dev/)
+6. [react-declarative](https://www.npmjs.com/package/react-declarative)
 
 ## Code sample
 
