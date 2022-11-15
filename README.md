@@ -1,6 +1,8 @@
-# cra-template-react-declarative
+# ⚛️ cra-template-react-declarative
 
 > Contains the most advanced `todo-list` which you ever seen!
+
+[![npm](https://img.shields.io/npm/v/cra-template-react-declarative.svg?style=flat-square)](https://npmjs.org/package/cra-template-react-declarative)
 
 ![screenshot](./docs/screenshot.gif)
 
