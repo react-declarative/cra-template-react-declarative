@@ -71,6 +71,7 @@ export const TodoOnePage = ({
             history,
             onSave: () => {
                 alert(JSON.stringify(data, null, 2));
+                return true;
             },
         });
 

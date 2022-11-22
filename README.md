@@ -86,8 +86,9 @@ export const TodoOnePage = ({
             beginSave,
         } = usePreventLeave({
             history,
-            onSave: () => {
+            onSave: async () => {
                 alert(JSON.stringify(data, null, 2));
+                return true; // HTTP 200
             },
         });
 
