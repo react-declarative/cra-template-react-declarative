@@ -1,4 +1,4 @@
-import { createWindowHistory, createRouteManager, FetchError } from "react-declarative";
+import { createWindowHistory, createRouteParamsManager, createRouteItemManager, useRouteParams as useRouteParamsInternal, useRouteItem as useRouteItemInternal, FetchError } from "react-declarative";
 
 import routes from '../config/routes';
 
@@ -15,7 +15,11 @@ export const handleGlobalError = (error: any) => {
     history.push('/error-page');
 };
 
-export const getRouteParams = createRouteManager(routes, history);
+export const getRouteParams = createRouteParamsManager(routes, history);
+export const getRouteItem = createRouteItemManager(routes, history);
+
+export const useRouteParams = () => useRouteParamsInternal(routes, history);
+export const useRouteItem = () => useRouteItemInternal(routes, history);
 
 // window.addEventListener('error', handleGlobalError);
 // window.addEventListener('unhandledrejection', handleGlobalError);
