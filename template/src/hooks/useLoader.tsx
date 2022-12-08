@@ -1,4 +1,5 @@
-import { createProvider, useModel } from 'react-declarative';
+import { useMemo } from 'react';
+import { createValueProvider, useModel } from 'react-declarative';
 
 interface IState {
     loader: number;
@@ -9,7 +10,7 @@ interface IContext {
     setLoader: (loader: boolean) => void;
 }
 
-export const [LoaderProviderCtx, useLoader] = createProvider<IContext>();
+export const [LoaderProviderCtx, useLoader] = createValueProvider<IContext>();
 
 export const LoaderProvider = ({
     children,
@@ -22,12 +23,12 @@ export const LoaderProvider = ({
         }),
         debounce: 500,
     });
-    const payload = {
+    const payload = useMemo(() => ({
         loader: !!model.data.loader,
         setLoader: (loader: boolean) => model.setData((data) => ({
             loader: data.loader + (loader ? 1 : -1),
         })),
-    };
+    }), [model]);
     return (
         <LoaderProviderCtx payload={payload}>
             {children}
