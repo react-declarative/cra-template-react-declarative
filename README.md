@@ -9,6 +9,12 @@
 ## Usage
 
 ```bash
+yarn create react-app --template cra-template-react-declarative .
+```
+
+or
+
+```bash
 npx create-react-app . --template=react-declarative
 ```
 
