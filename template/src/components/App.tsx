@@ -1,6 +1,6 @@
 import { observer } from "mobx-react";
 
-import { Switch, Scaffold } from "react-declarative";
+import { Switch, Scaffold2, useRouteItem } from "react-declarative";
 
 import Box from '@mui/material/Box';
 import CircularProgress from '@mui/material/CircularProgress';
@@ -11,9 +11,10 @@ import history from "../helpers/history";
 
 import useLoader from "../hooks/useLoader";
 
-import routes from "../config/routes";
+import routes, { sideMenuClickMap } from "../config/routes";
 import sidemenu from "../config/sidemenu";
 import scaffoldmenu from "../config/scaffoldmenu";
+import { CC_APP_NAME } from "../config/params";
 
 const Loader = () => (
   <Box
@@ -39,20 +40,27 @@ const Loader = () => (
 const Fragment = () => <></>;
 
 const App = observer(() => {
+  
+  const item = useRouteItem(routes, history);
+
   const { loader, setLoader } = useLoader();
   const handleLoadStart = () => setLoader(true);
   const handleLoadEnd = () => setLoader(false);
+
   return (
     // TODO: <Scaffold payload={currentUser.id}
     //                 ^^^^^^^^^^^^^^^^^^^^^^^^
-    <Scaffold
-      dense
-      loaderLine={loader}
+    <Scaffold2
+      appName={CC_APP_NAME}
+      activeOptionPath={item?.sideMenu || "root.example_pages.dashboard"}
+      loader={loader}
       options={sidemenu}
       actions={scaffoldmenu}
       Loader={Loader}
       BeforeSearch={UserInfo}
-      onOptionClick={(name) => history.push(name)}
+      onOptionClick={(path) => {
+        history.push(sideMenuClickMap[path] || '/not-found');
+      }}
     >
       <Switch
         Loader={Fragment}
@@ -61,7 +69,7 @@ const App = observer(() => {
         onLoadStart={handleLoadStart}
         onLoadEnd={handleLoadEnd}
       />
-    </Scaffold>
+    </Scaffold2>
   );
 });
 

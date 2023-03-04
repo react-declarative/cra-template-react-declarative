@@ -2,7 +2,7 @@ import { One, FieldType, TypedField } from "react-declarative";
 
 import Card from "../../components/common/Card";
 
-const CC_FULL_HEIGHT = "calc(100vh - 65px)";
+const CC_FULL_HEIGHT = "calc(100vh - 85px)";
 const CC_CELL_PADDING = "7px";
 const CC_MIN_HEIGHT = "635px";
 

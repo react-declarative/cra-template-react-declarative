@@ -1,8 +1,8 @@
-import { IScaffoldOption } from "react-declarative";
+import { IScaffold2Action } from "react-declarative";
 
 import LogoutIcon from '@mui/icons-material/LogoutOutlined';
 
-export const scaffoldactions: IScaffoldOption[] = [
+export const scaffoldactions: IScaffold2Action[] = [
     {
       action: 'logout-action',
       icon: LogoutIcon,

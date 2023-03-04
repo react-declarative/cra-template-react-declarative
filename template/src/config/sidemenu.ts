@@ -1,23 +1,23 @@
-import { IMenuGroup } from "react-declarative";
+import { IScaffold2Group } from "react-declarative";
 
 import PlaylistAddCheckIcon from "@mui/icons-material/PlaylistAddCheckOutlined";
 import PublicIcon from "@mui/icons-material/Public";
 import HomeIcon from "@mui/icons-material/Home";
 
-export const sidemenu: IMenuGroup[] = [
+export const sidemenu: IScaffold2Group[] = [
     {
+        id: "example_pages",
         label: "Example Pages",
         icon: PublicIcon,
-        lifted: true,
-        options: [
+        children: [
             {
                 label: "Dashboard",
-                name: '/dashboard',
+                id: 'dashboard',
                 icon: HomeIcon,
             },
             {
                 label: "Todo list",
-                name: '/todos',
+                id: 'todos',
                 icon: PlaylistAddCheckIcon,
             },
         ]
