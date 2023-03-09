@@ -25,6 +25,7 @@ const updateFields: IField[] = [
     type: FieldType.Text,
     name: "title",
     title: "Title",
+    defaultValue: "New title",
   },
 ];
 
