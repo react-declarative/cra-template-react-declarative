@@ -2,8 +2,8 @@ import { observer } from "mobx-react";
 
 import { Switch, Scaffold2, useRouteItem } from "react-declarative";
 
-import Box from '@mui/material/Box';
-import CircularProgress from '@mui/material/CircularProgress';
+import Box from "@mui/material/Box";
+import CircularProgress from "@mui/material/CircularProgress";
 
 import UserInfo from "./common/UserInfo";
 
@@ -40,7 +40,6 @@ const Loader = () => (
 const Fragment = () => <></>;
 
 const App = observer(() => {
-  
   const item = useRouteItem(routes, history);
 
   const { loader, setLoader } = useLoader();
@@ -59,7 +58,7 @@ const App = observer(() => {
       Loader={Loader}
       BeforeSearch={UserInfo}
       onOptionClick={(path) => {
-        history.push(sideMenuClickMap[path] || '/not-found');
+        history.push(sideMenuClickMap[path] || "/not-found");
       }}
     >
       <Switch

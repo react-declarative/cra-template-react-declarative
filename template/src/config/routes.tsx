@@ -1,10 +1,10 @@
-import { ISwitchItem } from 'react-declarative';
+import { ISwitchItem } from "react-declarative";
 
-import DashboardPage from '../pages/DashboardPage';
-import TodoListPage from '../pages/TodoListPage';
-import TodoOnePage from '../pages/TodoOnePage';
+import DashboardPage from "../pages/DashboardPage";
+import TodoListPage from "../pages/TodoListPage";
+import TodoOnePage from "../pages/TodoOnePage";
 
-import ErrorPage from '../pages/ErrorPage';
+import ErrorPage from "../pages/ErrorPage";
 
 interface IRouteItem extends ISwitchItem {
   sideMenu: string;
@@ -12,35 +12,35 @@ interface IRouteItem extends ISwitchItem {
 
 export const routes: IRouteItem[] = [
   {
-    path: '/',
+    path: "/",
     sideMenu: "root.example_pages.dashboard",
-    redirect: '/dashboard'
+    redirect: "/dashboard",
   },
   {
-    path: '/dashboard',
+    path: "/dashboard",
     sideMenu: "root.example_pages.dashboard",
     element: DashboardPage,
   },
   {
-    path: '/todos',
+    path: "/todos",
     sideMenu: "root.example_pages.todos",
     element: TodoListPage,
   },
   {
-    path: '/todos/:id',
+    path: "/todos/:id",
     sideMenu: "root.example_pages.todos",
     element: TodoOnePage,
   },
   {
-    path: '/error-page',
+    path: "/error-page",
     sideMenu: "",
     element: ErrorPage,
   },
   {
-    path: '/unauthorized-page',
+    path: "/unauthorized-page",
     sideMenu: "",
     element: ErrorPage,
-  }
+  },
 ];
 
 export const sideMenuClickMap: Record<string, string> = {

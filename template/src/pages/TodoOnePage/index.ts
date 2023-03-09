@@ -1,2 +1,2 @@
-export * from './TodoOnePage';
-export { default } from './TodoOnePage';
+export * from "./TodoOnePage";
+export { default } from "./TodoOnePage";

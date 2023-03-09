@@ -1,2 +1,2 @@
-export * from './DashboardPage';
-export { default } from './DashboardPage';
+export * from "./DashboardPage";
+export { default } from "./DashboardPage";
