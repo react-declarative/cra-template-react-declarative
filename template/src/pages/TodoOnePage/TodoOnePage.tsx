@@ -10,6 +10,8 @@ import {
 import fetchApi from "../../helpers/fetchApi";
 import history from "../../helpers/history";
 
+import ITodoItem from "../../model/ITodoItem";
+
 interface ITodoOnePageProps {
   id: string;
 }
@@ -53,16 +55,10 @@ const fields: TypedField[] = [
   },
 ];
 
-interface ITodoItem {
-  completed: boolean;
-  id: number;
-  title: string;
-  userId: number;
-}
-
 export const TodoOnePage = ({ id }: ITodoOnePageProps) => {
-  const fetchState = () =>
-    [fetchApi<ITodoItem>(`/api/v1/todos/${id}`)] as const;
+  const fetchState = () => [
+    fetchApi<ITodoItem>(`/api/v1/todos/${id}`)
+  ] as const;
 
   const Content = (props: any) => {
     const { data, oneProps, beginSave } = usePreventLeave({
@@ -80,7 +76,7 @@ export const TodoOnePage = ({ id }: ITodoOnePageProps) => {
           title="Todo list"
           subtitle={props.todo.title}
           onSave={beginSave}
-          onBack={() => history.push("/todos")}
+          onBack={() => history.push("/todos_list")}
           saveDisabled={!data}
         />
         <One<ITodoItem>

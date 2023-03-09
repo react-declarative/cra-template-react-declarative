@@ -1,13 +1,13 @@
 import { observer } from "mobx-react";
 
-import { Switch, Scaffold2, useRouteItem } from "react-declarative";
+import { Switch, Scaffold2 } from "react-declarative";
 
 import Box from "@mui/material/Box";
 import CircularProgress from "@mui/material/CircularProgress";
 
 import UserInfo from "./common/UserInfo";
 
-import history from "../helpers/history";
+import history, { useRouteItem } from "../helpers/history";
 
 import useLoader from "../hooks/useLoader";
 
@@ -40,7 +40,7 @@ const Loader = () => (
 const Fragment = () => <></>;
 
 const App = observer(() => {
-  const item = useRouteItem(routes, history);
+  const item = useRouteItem();
 
   const { loader, setLoader } = useLoader();
   const handleLoadStart = () => setLoader(true);

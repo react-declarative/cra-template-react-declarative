@@ -113,7 +113,7 @@ export const TodoListPage = () => {
   };
 
   const handleClick = (row: any) => {
-    history.push(`/todos/${row.id}`);
+    history.push(`/todos_list/${row.id}`);
   };
 
   return (
