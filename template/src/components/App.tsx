@@ -52,7 +52,7 @@ const App = observer(() => {
     <Scaffold2
       appName={CC_APP_NAME}
       activeOptionPath={item?.sideMenu || "root.example_pages.dashboard"}
-      loader={loader}
+      loading={loader}
       options={sidemenu}
       actions={scaffoldmenu}
       Loader={Loader}
